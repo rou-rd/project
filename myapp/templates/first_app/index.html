@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exercise title</title>
+        <link rel="stylesheet" href="{% static "css/xtyle.css"%}">
+    </head>
+    <body>
+        <h1>Welcome to my website</h1>
+        <p>I'm excited to eventually learn Django!!</p>
+        <a href="https://www.djangoproject.com/">Here is a link to the official Django Website</a>
+        <p>Here is a picture of the pythone Logo</p>
+        <img src="https://onlineitguru.com/wp-content/uploads/2017/04/python-programming.png" alt="there is no pic">
+        <p>Here are three reasons Django is cool</p>
+        <ol>
+            <li>Ridiculously Fast</li>
+            <li>Reassuringly Secure</li>
+            <li>Exceedingly Scalable</li>
+        </ol>
+        <h2>Bonnus : Optional Extra Credit</h2>
+        <p>can you figure out how to make a picture a link ?</p>
+        <a href="https://www.djangoproject.com/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSukOraMmW6jveUFpQckNRlnNTZ3nhW99tovsFhqjZZ2eauRvFL"></a>
+        <table border="1">
+            <thead>
+                <th><strong>Number</strong></th>
+                <th><strong>Color</strong></th>
+                <th><strong>Countery</strong></th>
+            </thead>
+            <tr>
+                <td>1200000000</td>
+                <td>noir:blanc</td>
+                <td>Tunisia</td>
+            </tr>
+        </table>
+        <div class="django2">
+            {%if access_records %}
+            <table>
+               <thead>
+                   <th>site name</th>
+                   <th>date accessed</th>
+               </thead> 
+            
+            {% for acc in access_records %}
+            <tr>
+                <td>{{ acc.name }}</td>
+                <td>{{ acc.date }}</td>
+            </tr>
+            {% endfor %}
+            </table>
+            {% else %}
+            <p>no access records found</p>
+            {% endif %}
+        </div>
+    </body>
+ </html>
